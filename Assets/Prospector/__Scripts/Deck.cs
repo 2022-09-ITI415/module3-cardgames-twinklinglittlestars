@@ -252,7 +252,7 @@ public class Deck : MonoBehaviour {
 			cards.Add (card);
 		} // for all the Cardnames	
 	} // makeCards
-	
+
 	//Find the proper face card
 	public Sprite GetFace(string faceS) {
 		foreach (Sprite tS in faceSprites) {
@@ -264,19 +264,23 @@ public class Deck : MonoBehaviour {
 	 }// getFace 
 
 	 static public void Shuffle(ref List<Card> oCards)
-	 {
+	 { // Create a temporary List to hold the new shuffle order
 	 	List<Card> tCards = new List<Card>();
 
-	 	int ndx;   // which card to move
+	 	int ndx;   // which card to move // this will hold the index of the card to be moved
+		tCards = new List<Card>(); // Initialize the temporary List
 
+		// Repeat as long as there are cards in the original List
 	 	while (oCards.Count > 0) 
-	 	{
+	 	{ // pick the index of a random card
 	 		// find a random card, add it to shuffled list and remove from original deck
 	 		ndx = Random.Range(0,oCards.Count);
+			// add that card to a temporary List
 	 		tCards.Add(oCards[ndx]);
+			// and remove that card from the original List
 	 		oCards.RemoveAt(ndx);
 	 	}
-
+		// remove the original List with the temporary List
 	 	oCards = tCards;
 
 	 	//because oCards is a ref parameter, the changes made are propogated back
