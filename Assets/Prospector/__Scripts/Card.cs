@@ -73,7 +73,7 @@ public class Card : MonoBehaviour {
 				}
 			}
 		}
-		
+
 	public bool faceUp {
 		get {
 			return (!back.activeSelf);
@@ -83,6 +83,13 @@ public class Card : MonoBehaviour {
 			back.SetActive(!value);
 		}
 	}
+
+	// Virtual methods can be overridden by subclass methods with the same name
+	virtual public void OnMouseUpAsButton() 
+	{
+		print (name); // When clicked, this outputs the card name
+	}
+
 
 
 	// Update is called once per frame
