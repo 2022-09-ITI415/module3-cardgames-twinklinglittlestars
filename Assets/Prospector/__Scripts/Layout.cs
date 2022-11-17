@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // The SlotDef class is not a subclass of MonoBehaviour, so it doesn't need
 // a separate C# file
@@ -27,7 +28,8 @@ public class Layout : MonoBehaviour
     public SlotDef drawPile;
     public SlotDef discardPile;
     // This holds all of the possible names for the layers set by layerID
-    public string[] sortingLayerNames = new string[] { "Row0", "Row1", "Row2", "Row3", "Discard", "Draw"};
+    public string[] sortingLayerNames = new string[] { "Row0", "Row1", "Row2", "Row3", "Row4", "Row5", "Discard", "Draw"};
+    public string[] pyramidSortingLayerNames = new string[] { "Row0", "Row1", "Row2", "Row3", "Row4", "Row5", "Row6", "Row7", "Row8", "Discard", "Draw"}; 
 
     // This function is called to read in the LayoutXML.xml file
     public void ReadLayout(string xmlText) {
@@ -81,10 +83,14 @@ public class Layout : MonoBehaviour
                 break;
 
                 case "drawpile":
-                tSD.stagger.x = float.Parse( slotsX[i].att("xstagger") );
+                if (SceneManager.GetActiveScene().name == "_Prospector_Scene_0") {
+                    tSD.stagger.x = float.Parse( slotsX[i].att("xstagger") );
+                }
+                    
+               
                 drawPile = tSD;
                 break;
-                case "discardPile":
+                case "discardpile":
                 discardPile = tSD;
                 break;
             }
