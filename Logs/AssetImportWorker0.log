@@ -1,23 +1,30 @@
+Unity Editor version:    2021.3.8f1 (b30333d56e81)
+Branch:                  2021.3/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 12.6 (Build 21G115)
+Darwin version:          21.6.0
+Architecture:            x86_64
+Running under Rosetta:   NO
+Available memory:        8192 MB
 Using pre-set license
-Built from '2021.3/staging' branch; Version is '2021.3.8f1 (b30333d56e81) revision 11731763'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'en' Physical Memory: 16237 MB
-BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+Pro License: YES
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Unity.exe
+/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/MacOS/Unity
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/unais/OneDrive/Documents/GitHub/module3-cardgames-twinklinglittlestars
+/Users/unaisahquazi/Documents/GitHub/module3-cardgames-twinklinglittlestars
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51498
-Successfully changed project path to: C:/Users/unais/OneDrive/Documents/GitHub/module3-cardgames-twinklinglittlestars
-C:/Users/unais/OneDrive/Documents/GitHub/module3-cardgames-twinklinglittlestars
+53275
+Successfully changed project path to: /Users/unaisahquazi/Documents/GitHub/module3-cardgames-twinklinglittlestars
+/Users/unaisahquazi/Documents/GitHub/module3-cardgames-twinklinglittlestars
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,160 +54,138 @@ C:/Users/unais/OneDrive/Documents/GitHub/module3-cardgames-twinklinglittlestars
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 22.65 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 37.11 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.8f1 (b30333d56e81)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/unais/OneDrive/Documents/GitHub/module3-cardgames-twinklinglittlestars/Assets
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/unaisahquazi/Documents/GitHub/module3-cardgames-twinklinglittlestars/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3060 (ID=0x2504)
-    Vendor:   NVIDIA
-    VRAM:     12142 MB
-    Driver:   30.0.15.1215
+Color LCD preferred device: Intel(R) Iris(TM) Plus Graphics 640 (low power)
+Metal devices available: 1
+0: Intel(R) Iris(TM) Plus Graphics 640 (low power)
+Using device Intel(R) Iris(TM) Plus Graphics 640 (low power)
+Initializing Metal device caps: Intel(R) Iris(TM) Plus Graphics 640
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56716
+Mono path[0] = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56123
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002836 seconds.
-Native extension for WindowsStandalone target not found
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.002850 seconds.
+Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 19.89 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 77.45 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.437 seconds
+- Completed reload, in  1.026 seconds
 Domain Reload Profiling:
-	ReloadAssembly (437ms)
-		BeginReloadAssembly (51ms)
+	ReloadAssembly (1027ms)
+		BeginReloadAssembly (180ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (307ms)
-			LoadAssemblies (50ms)
+		EndReloadAssembly (692ms)
+			LoadAssemblies (181ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (77ms)
+			SetupTypeCache (157ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (22ms)
-			SetupLoadedEditorAssemblies (168ms)
+			RebuildScriptCaches (103ms)
+			SetupLoadedEditorAssemblies (355ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (20ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (105ms)
-				ProcessInitializeOnLoadMethodAttributes (35ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (77ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (203ms)
+				ProcessInitializeOnLoadMethodAttributes (58ms)
 				AfterProcessingInitializeOnLoad (0ms)
-				EditorAssembliesLoaded (0ms)
+				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002576 seconds.
+Registered in 0.007911 seconds.
 Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.625 seconds
+- Completed reload, in  1.498 seconds
 Domain Reload Profiling:
-	ReloadAssembly (626ms)
-		BeginReloadAssembly (78ms)
+	ReloadAssembly (1499ms)
+		BeginReloadAssembly (173ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (10ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (14ms)
-		EndReloadAssembly (466ms)
-			LoadAssemblies (52ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (1104ms)
+			LoadAssemblies (132ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (136ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (221ms)
+			SetupTypeCache (331ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (481ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (2ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (35ms)
-				ProcessInitializeOnLoadAttributes (156ms)
-				ProcessInitializeOnLoadMethodAttributes (21ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				BeforeProcessingInitializeOnLoad (82ms)
+				ProcessInitializeOnLoadAttributes (342ms)
+				ProcessInitializeOnLoadMethodAttributes (45ms)
+				AfterProcessingInitializeOnLoad (1ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 0.25 ms, found 2 plugins.
+Launching external process: /Applications/Unity/Hub/Editor/2021.3.8f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.10 seconds
+Refreshing native plugins compatible for Editor in 0.52 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1698 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 19 unused Assets / (47.0 KB). Loaded Objects now: 2165.
-Memory consumption went from 73.2 MB to 73.1 MB.
-Total: 2.092300 ms (FindLiveObjects: 0.111000 ms CreateObjectMapping: 0.034500 ms MarkObjects: 1.890700 ms  DeleteObjects: 0.055200 ms)
+Unloading 1708 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 19 unused Assets / (35.0 KB). Loaded Objects now: 2173.
+Memory consumption went from 161.6 MB to 161.5 MB.
+Total: 3.941730 ms (FindLiveObjects: 0.168368 ms CreateObjectMapping: 0.141563 ms MarkObjects: 3.544331 ms  DeleteObjects: 0.086379 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 72398.433397 seconds.
-  path: Assets/OtherGame/Sprites
-  artifactKey: Guid(bd08374f33819ad42b36ef7d48204842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OtherGame/Sprites using Guid(bd08374f33819ad42b36ef7d48204842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3146ed4948d9fc64bbf8cc89275ded0a') in 0.006777 seconds 
+  Time since last request: 618390.463838 seconds.
+  path: Assets/OtherGame/PScripts/Prospector.cs
+  artifactKey: Guid(608c483a523fb1e4bb187cc18da3e602) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OtherGame/PScripts/Prospector.cs using Guid(608c483a523fb1e4bb187cc18da3e602) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feaddb1f539bd42074cd7174df207617') in 0.683696 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2395.794426 seconds.
-  path: Assets/OtherGame/Sprites/dk.jpg
-  artifactKey: Guid(91f3d261a626d0346b88fa6561f476fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OtherGame/Sprites/dk.jpg using Guid(91f3d261a626d0346b88fa6561f476fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1671bd3e78e58e2d52a0ebdeca25e07b') in 0.066453 seconds 
+  Time since last request: 4007.384599 seconds.
+  path: Assets/OtherGame/Sprites/stage1.jpeg
+  artifactKey: Guid(a5871d803c9b54538b0f7e1c95ff3a18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OtherGame/Sprites/stage1.jpeg using Guid(a5871d803c9b54538b0f7e1c95ff3a18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fe77c4eb0a6476cd9ac0f73fc0cda67') in 1.441781 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/OtherGame/Sprites/mingyu.jpg
-  artifactKey: Guid(14a1703010d3c6749a6a9045f3e4b872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OtherGame/Sprites/mingyu.jpg using Guid(14a1703010d3c6749a6a9045f3e4b872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16eb5800e6e39b0fa77828e9ce150152') in 0.013136 seconds 
+  Time since last request: 12.118652 seconds.
+  path: Assets/OtherGame/Sprites/PSB.mat
+  artifactKey: Guid(dc5fae49f839e4d2b82565af5b5c0cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OtherGame/Sprites/PSB.mat using Guid(dc5fae49f839e4d2b82565af5b5c0cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1aefa316084a87f74ed7b7bad4dc6366') in 2.018958 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/OtherGame/Sprites/jeonghan.jpg
-  artifactKey: Guid(231e9305f09d63a4e9980786c2de72d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OtherGame/Sprites/jeonghan.jpg using Guid(231e9305f09d63a4e9980786c2de72d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '337345203d4b1c171629e09b249a96cf') in 0.015744 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/OtherGame/Sprites/seungkwan.jpg
-  artifactKey: Guid(c94af44242891fd40875b7abf570cdd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OtherGame/Sprites/seungkwan.jpg using Guid(c94af44242891fd40875b7abf570cdd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea70b549ab599fc5b31150348e7ccede') in 0.009557 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/OtherGame/Sprites/junhui.jpg
-  artifactKey: Guid(a0bedc1d200bc594fbf4058fd2f58fc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OtherGame/Sprites/junhui.jpg using Guid(a0bedc1d200bc594fbf4058fd2f58fc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f60d17797e1927d6743d5587033ff74b') in 0.011334 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/OtherGame/Sprites/s.coups.jpg
-  artifactKey: Guid(a32015940872c7345872f79693773e42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/OtherGame/Sprites/s.coups.jpg using Guid(a32015940872c7345872f79693773e42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34d025f34d8cf053e6f895b9c74eb8d0') in 0.010440 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 121.349682 seconds.
+  path: Assets/OtherGame/Sprites/PSB.mat
+  artifactKey: Guid(dc5fae49f839e4d2b82565af5b5c0cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OtherGame/Sprites/PSB.mat using Guid(dc5fae49f839e4d2b82565af5b5c0cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77c50f3497560c17831d5036adfa33c4') in 0.040618 seconds 
