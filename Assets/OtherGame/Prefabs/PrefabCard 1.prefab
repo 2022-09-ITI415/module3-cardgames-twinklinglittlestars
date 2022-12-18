@@ -108,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a01616aa948f3d4d80c44744188746e, type: 3}
+  m_Script: {fileID: 11500000, guid: f0f3f4a243e598a4ea2122283efb0860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   suit: 
@@ -122,6 +122,7 @@ MonoBehaviour:
     face: 
     rank: 0
     pips: []
+  spriteRenderers: []
   state: 0
   hiddenBy: []
   layoutID: 0

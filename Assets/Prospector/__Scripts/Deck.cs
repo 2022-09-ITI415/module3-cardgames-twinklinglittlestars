@@ -26,7 +26,7 @@ public class Deck : MonoBehaviour {
 
 	// Prefabs
 	public GameObject prefabSprite;
-	public GameObject prefabCard;
+	public GameObject prefabcard;
 
 	[Header("Set Dynamically")]
 
@@ -60,11 +60,11 @@ public class Deck : MonoBehaviour {
 		
 		// -------- end from page 576
 		ReadDeck (deckXMLText);
-		MakeCards();
+		Makecards();
 	}
 
 
-	// ReadDeck parses the XML file passed to it into Card Definitions
+	// ReadDeck parses the XML file passed to it into card Definitions
 	public void ReadDeck(string deckXMLText)
 	{
 		xmlr = new PT_XMLReader ();
@@ -99,14 +99,14 @@ public class Deck : MonoBehaviour {
 		// read pip locations for each card rank
 		// read the card definitions, parse attribute values for pips
 		cardDefs = new List<CardDefinition>();
-		PT_XMLHashList xCardDefs = xmlr.xml["xml"][0]["card"];
+		PT_XMLHashList xcardDefs = xmlr.xml["xml"][0]["card"];
 		
-		for (int i=0; i<xCardDefs.Count; i++) {
+		for (int i=0; i<xcardDefs.Count; i++) {
 			// for each carddef in the XML, copy attributes and set up in cDef
 			CardDefinition cDef = new CardDefinition();
-			cDef.rank = int.Parse(xCardDefs[i].att("rank"));
+			cDef.rank = int.Parse(xcardDefs[i].att("rank"));
 			
-			PT_XMLHashList xPips = xCardDefs[i]["pip"];
+			PT_XMLHashList xPips = xcardDefs[i]["pip"];
 			if (xPips != null) {			
 				for (int j = 0; j < xPips.Count; j++) {
 					deco = new Decorator();
@@ -125,11 +125,11 @@ public class Deck : MonoBehaviour {
 			
 			// if it's a face card, map the proper sprite
 			// foramt is ##A, where ## in 11, 12, 13 and A is letter indicating suit
-			if (xCardDefs[i].HasAtt("face")){
-				cDef.face = xCardDefs[i].att ("face");
+			if (xcardDefs[i].HasAtt("face")){
+				cDef.face = xcardDefs[i].att ("face");
 			}
 			cardDefs.Add (cDef);
-		} // for i < xCardDefs.Count
+		} // for i < xcardDefs.Count
 	} // ReadDeck
 	
 	public CardDefinition GetCardDefinitionByRank(int rnk) {
@@ -142,7 +142,7 @@ public class Deck : MonoBehaviour {
 	}//GetCardDefinitionByRank
 	
 	
-	public void MakeCards() {
+	public void Makecards() {
 		// stub Add the code from page 577 here
 		cardNames = new List<string>();
 		string[] letters = new string[] {"C","D","H","S"};
@@ -152,7 +152,7 @@ public class Deck : MonoBehaviour {
 			}
 		}
 		
-		// list of all Cards
+		// list of all cards
 		cards = new List<Card>();
 		
 		// temp variables
@@ -161,7 +161,7 @@ public class Deck : MonoBehaviour {
 		SpriteRenderer tSR = null;  // so tempted to make a D&D ref here...
 		
 		for (int i=0; i<cardNames.Count; i++) {
-			GameObject cgo = Instantiate(prefabCard) as GameObject;
+			GameObject cgo = Instantiate(prefabcard) as GameObject;
 			cgo.transform.parent = deckAnchor;
 			Card card = cgo.GetComponent<Card>();
 			
@@ -253,8 +253,8 @@ public class Deck : MonoBehaviour {
 			card.faceUp = showFaceUp;
 			
 			cards.Add (card);
-		} // for all the Cardnames	
-	} // makeCards
+		} // for all the cardnames	
+	} // makecards
 
 	//Find the proper face card
 	public Sprite GetFace(string faceS) {
@@ -266,27 +266,27 @@ public class Deck : MonoBehaviour {
 		return (null);  // couldn't find the sprite (should never reach this line)
 	 }// getFace 
 
-	 static public void Shuffle(ref List<Card> oCards)
+	 static public void Shuffle(ref List<Card> ocards)
 	 { // Create a temporary List to hold the new shuffle order
-	 	List<Card> tCards = new List<Card>();
+	 	List<Card> tcards = new List<Card>();
 
 	 	int ndx;   // which card to move // this will hold the index of the card to be moved
-		tCards = new List<Card>(); // Initialize the temporary List
+		tcards = new List<Card>(); // Initialize the temporary List
 
 		// Repeat as long as there are cards in the original List
-	 	while (oCards.Count > 0) 
+	 	while (ocards.Count > 0) 
 	 	{ // pick the index of a random card
 	 		// find a random card, add it to shuffled list and remove from original deck
-	 		ndx = Random.Range(0,oCards.Count);
+	 		ndx = Random.Range(0,ocards.Count);
 			// add that card to a temporary List
-	 		tCards.Add(oCards[ndx]);
+	 		tcards.Add(ocards[ndx]);
 			// and remove that card from the original List
-	 		oCards.RemoveAt(ndx);
+	 		ocards.RemoveAt(ndx);
 	 	}
 		// remove the original List with the temporary List
-	 	oCards = tCards;
+	 	ocards = tcards;
 
-	 	//because oCards is a ref parameter, the changes made are propogated back
+	 	//because ocards is a ref parameter, the changes made are propogated back
 	 	//for ref paramters changes made in the function persist.
 
 

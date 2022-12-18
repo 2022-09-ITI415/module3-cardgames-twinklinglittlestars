@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,9 +28,8 @@ public class Layout : MonoBehaviour
     public List<SlotDef> slotDefs; // All the SlotDefs for Row0-Row3
     public SlotDef drawPile;
     public SlotDef discardPile;
-    // This holds all of the possible names for the layers set by layerID
-    public string[] sortingLayerNames = new string[] { "Row0", "Row1", "Row2", "Row3", "Row4", "Row5", "Discard", "Draw"};
-    public string[] pyramidSortingLayerNames = new string[] { "Row0", "Row1", "Row2", "Row3", "Row4", "Row5", "Row6", "Row7", "Row8", "Discard", "Draw"}; 
+    // This holds all of the possible names for the layers set by layerI
+    public string[] pyramidSortingLayerNames = new string[] { "Row0", "Row1", "Row2", "Row3", "Row4", "Row5", "Row6", "Discard", "Draw"}; 
 
     // This function is called to read in the LayoutXML.xml file
     public void ReadLayout(string xmlText) {
@@ -64,7 +63,7 @@ public class Layout : MonoBehaviour
             tSD.y = float.Parse( slotsX[i].att("y") );
             tSD.layerID = int.Parse( slotsX[i].att("layer") );
             // This converts the number of the layerID into a text layerName
-            tSD.layerName = sortingLayerNames[ tSD.layerID];
+            tSD.layerName = pyramidSortingLayerNames[ tSD.layerID];
 
             switch (tSD.type) 
             {
@@ -84,7 +83,7 @@ public class Layout : MonoBehaviour
                 break;
 
                 case "drawpile":
-                if (SceneManager.GetActiveScene().name == "_Prospector_Scene_0") {
+                if (SceneManager.GetActiveScene().name == "GameScene") {
                     tSD.stagger.x = float.Parse( slotsX[i].att("xstagger") );
                 }
                     

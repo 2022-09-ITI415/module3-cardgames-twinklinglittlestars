@@ -1,4 +1,4 @@
-<xml>
+﻿<xml>
 	<!-- This file holds info for laying out the Prospector card game. -->
 	
 	<!-- The multiplier is multiplied by the x and y attributes below. -->
@@ -55,10 +55,10 @@
 	
 
 	<!--This positions the draw pile and staggers it -->
-	<slot type="drawpile" x="6" y="4" xstagger="0" layer="4"/>
+	<slot type="drawpile" x="6" y="4" xstagger="0" layer="7"/>
 	
 	<!--This positions the discard pile and target card -->
-	<slot type="discardpile" x="-6" y="5" layer="5"/>
+	<slot type="discardpile" x="-6" y="5" layer="8"/>
 	
 </xml>
 	

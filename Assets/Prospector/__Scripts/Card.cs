@@ -12,7 +12,7 @@ public class Card : MonoBehaviour {
 	public List<GameObject> decoGOs = new List<GameObject>();
 	public List<GameObject> pipGOs = new List<GameObject>();
 	
-	public GameObject back;  // back of card;
+	public GameObject back;  // back of Card;
 	public CardDefinition def;  // from DeckXML.xml	
 
 	// List of the SpriteRenderer Components of this GameObject and its	children
@@ -21,7 +21,7 @@ public class Card : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		SetSortOrder(0); // Ensures that the card starts properly depth sorted
+		SetSortOrder(0); // Ensures that the Card starts properly depth sorted
 
 	}
 	// If spriteRenderers is not yet defined, this function defines it
@@ -87,7 +87,7 @@ public class Card : MonoBehaviour {
 	// Virtual methods can be overridden by subclass methods with the same name
 	virtual public void OnMouseUpAsButton() 
 	{
-		print (name); // When clicked, this outputs the card name
+		print (name); // When clicked, this outputs the Card name
 	}
 
 
@@ -100,8 +100,8 @@ public class Card : MonoBehaviour {
 
 [System.Serializable]
 public class Decorator{
-	public string	type;			// For card pips, tyhpe = "pip"
-	public Vector3	loc;			// location of sprite on the card
+	public string	type;			// For Card pips, tyhpe = "pip"
+	public Vector3	loc;			// location of sprite on the Card
 	public bool		flip = false;	//whether to flip vertically
 	public float 	scale = 1.0f;
 }

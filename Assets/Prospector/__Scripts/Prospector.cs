@@ -74,7 +74,7 @@ roundResultText.gameObject.SetActive(show);
 		Deck.Shuffle(ref deck.cards); // This shuffles the deck by reference 
 
 		// this section can be commented out; we're working on a real layout now
-		//Card c;
+		//card c;
 		//for (int cNum = 0; cNum<deck.cards.Count; cNum++)
         //{
 		//	c = deck.cards[cNum];
@@ -84,11 +84,11 @@ roundResultText.gameObject.SetActive(show);
 		layout = GetComponent<Layout>(); // Get the Layout component
 		layout.ReadLayout(layoutXML.text); // Pass LayoutXML to it
 
-		drawPile = ConvertListCardsToListCardProspectors( deck.cards );
+		drawPile = ConvertListcardsToListCardProspectors( deck.cards );
 		LayoutGame();
 	}
 
-	List<CardProspector> ConvertListCardsToListCardProspectors(List<Card>lCD) 
+	List<CardProspector> ConvertListcardsToListCardProspectors(List<Card>lCD) 
 	{
 		List<CardProspector> lCP = new List<CardProspector>();
 		CardProspector tCP;
@@ -136,9 +136,9 @@ roundResultText.gameObject.SetActive(show);
 		// ^ Set the localPosition of the card based on slotDef
 		cp.layoutID = tSD.id;
 		cp.slotDef = tSD;
-		// CardProspectors in the tableau have the state CardState.tableau
-		cp.state = eCardState.tableau;
-		// CardProspectors in the tableau have the state CardState.tableau
+		// CardProspectors in the tableau have the state cardState.tableau
+		cp.state = ecardState.tableau;
+		// CardProspectors in the tableau have the state cardState.tableau
 		cp.SetSortingLayerName(tSD.layerName); // Set the sorting layers 
 		tableau.Add(cp); // Add this CardProspector to the List<> tableau
 		}
@@ -146,7 +146,7 @@ roundResultText.gameObject.SetActive(show);
 		// Set which cards are hiding others
 		foreach (CardProspector tCP in tableau) {
 		foreach( int hid in tCP.slotDef.hiddenBy ) {
-		cp = FindCardByLayoutID(hid);
+		cp = FindcardByLayoutID(hid);
 		tCP.hiddenBy.Add(cp);
 			}
 		}
@@ -157,7 +157,7 @@ roundResultText.gameObject.SetActive(show);
 	}
 
 	// Convert from the layoutID int to the CardProspector with that ID
-	CardProspector FindCardByLayoutID(int layoutID) {
+	CardProspector FindcardByLayoutID(int layoutID) {
 	foreach (CardProspector tCP in tableau) {
 	// Search through all cards in the tableau List<>
 	if (tCP.layoutID == layoutID) {
@@ -174,7 +174,7 @@ roundResultText.gameObject.SetActive(show);
 	bool faceUp = true; // Assume the card will be face-up
 	foreach( CardProspector cover in cd.hiddenBy ) {
 	// If either of the covering cards are in the tableau
-	if (cover.state == eCardState.tableau) {
+	if (cover.state == ecardState.tableau) {
 	faceUp = false; // then this card is face-down
 	}
 	}
@@ -186,7 +186,7 @@ roundResultText.gameObject.SetActive(show);
 	void MoveToDiscard(CardProspector cd) 
 	{
 		// Set the state of the card to discard
-		cd.state = eCardState.discard;
+		cd.state = ecardState.discard;
 		discardPile.Add(cd); // Add it to the discardPile List<>
 		cd.transform.parent = layoutAnchor; // Update its transform parent
 		// Position this card on the discardPile
@@ -206,7 +206,7 @@ roundResultText.gameObject.SetActive(show);
 		// If there is currently a target card, move it to discardPile
 		if (target != null) MoveToDiscard(target);
 		target = cd; // cd is the new target
-		cd.state = eCardState.target;
+		cd.state = ecardState.target;
 		cd.transform.parent = layoutAnchor;
 		// Move to the target position
 		cd.transform.localPosition = new Vector3(
@@ -234,21 +234,21 @@ roundResultText.gameObject.SetActive(show);
 			layout.multiplier.y * (layout.drawPile.y + i*dpStagger.y),
 			-layout.drawPile.layerID+0.1f*i );
 			cd.faceUp = false; // Make them all face-down
-			cd.state = eCardState.drawpile;
+			cd.state = ecardState.drawpile;
 			// Set depth sorting
 			cd.SetSortingLayerName(layout.drawPile.layerName);
 			cd.SetSortOrder(-10*i);
 		}
 	}
 
-	// CardClicked is called any time a card in the game is clicked
-	public void CardClicked(CardProspector cd) {
+	// cardClicked is called any time a card in the game is clicked
+	public void cardClicked(CardProspector cd) {
 	// The reaction is determined by the state of the clicked card
 	switch (cd.state) {
-	case eCardState.target:
+	case ecardState.target:
 	// Clicking the target card does nothing
 	break;
-	case eCardState.drawpile:
+	case ecardState.drawpile:
 	// Clicking any card in the drawPile will draw the next card
 	MoveToDiscard(target); // Moves the target to the discardPile
 	MoveToTarget(Draw()); // Moves the next drawn card to the target
@@ -257,7 +257,7 @@ roundResultText.gameObject.SetActive(show);
 	FloatingScoreHandler(eScoreEvent.mine);
 	break;
 
-	case eCardState.tableau:
+	case ecardState.tableau:
 	// Clicking a card in the tableau will check if it's a valid play
 	bool validMatch = true;
 	if (!cd.faceUp) {	
