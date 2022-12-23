@@ -317,15 +317,6 @@ MonoBehaviour:
     hiddenBy: 
     type: slot
     stagger: {x: 0, y: 0}
-  sortingLayerNames:
-  - Row0
-  - Row1
-  - Row2
-  - Row3
-  - Row4
-  - Row5
-  - Discard
-  - Draw
   pyramidSortingLayerNames:
   - Row0
   - Row1

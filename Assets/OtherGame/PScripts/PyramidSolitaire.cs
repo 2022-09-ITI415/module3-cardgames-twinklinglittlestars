@@ -32,7 +32,11 @@ namespace dsps {
 		public CardPyramid target;
 		public List<CardPyramid> tableau;
 		public List<CardPyramid> discardPile;
+		//public CardPyramid cardOnTheTop;
 		//public FloatingScore fsRun;
+		CardPyramid firstCardThatIsClicked; // just added these 4 lines
+		CardPyramid secondCardThatIsClicked;
+		CardPyramid unselectCardThatIsClicked;
 
 		void Awake()
 		{
@@ -60,6 +64,36 @@ namespace dsps {
 
 			drawPile = ConvertListcardsToListCardPyramids(deck.cards);
 			LayoutGame();
+		}
+
+		void Update() // added new function for visual selection of cards
+		{
+			if (firstCardThatIsClicked == true)
+			{
+				SpriteRenderer spriteColor;
+				spriteColor = firstCardThatIsClicked.GetComponentInChildren<SpriteRenderer>();
+				spriteColor.color = Color.red;
+				unselectCardThatIsClicked = firstCardThatIsClicked;
+			}
+			if (secondCardThatIsClicked == true)
+			{
+				SpriteRenderer spriteColor;
+				spriteColor = secondCardThatIsClicked.GetComponentInChildren<SpriteRenderer>();
+				spriteColor.color = Color.blue;
+				unselectCardThatIsClicked = secondCardThatIsClicked;
+			}
+			if (firstCardThatIsClicked == false && unselectCardThatIsClicked == true)
+			{
+				SpriteRenderer spriteColor;
+				spriteColor = unselectCardThatIsClicked.GetComponentInChildren<SpriteRenderer>();
+				spriteColor.color = Color.white;
+			}
+			/*if (secondCardThatIsClicked == false && unselectCardThatIsClicked == true)
+			{
+				SpriteRenderer spriteColor;
+				spriteColor = unselectCardThatIsClicked.GetComponentInChildren<SpriteRenderer>();
+				spriteColor.color = Color.white;
+			}*/
 		}
 
 		List<CardPyramid> ConvertListcardsToListCardPyramids(List<Card> lCD)
@@ -144,7 +178,7 @@ namespace dsps {
 			return (null);
 		}
 		// This turns cards in the Mine face-up or face-down
-		void SetTableauFaces() {
+		/*void SetTableauFaces() {
 			foreach (CardPyramid cd in tableau) {
 				bool faceUp = true; // Assume the card will be face-up
 				foreach (CardPyramid cover in cd.hiddenBy) {
@@ -155,7 +189,7 @@ namespace dsps {
 				}
 				cd.faceUp = faceUp; // Set the value on the card
 			}
-		}
+		}*/
 
 		// Moves the current target to the discardPile
 		void MoveToDiscard(CardPyramid cd)
@@ -203,13 +237,13 @@ namespace dsps {
 				cd = drawPile[i];
 				cd.transform.parent = layoutAnchor;
 				// Position it correctly with the layout.drawPile.stagger
-				Vector2 dpStagger = layout.drawPile.stagger;
+				//Vector2 dpStagger = layout.drawPile.stagger;
 				cd.transform.localPosition = new Vector3(
-				layout.multiplier.x * (layout.drawPile.x + i * dpStagger.x),
-				layout.multiplier.y * (layout.drawPile.y + i * dpStagger.y),
-				-layout.drawPile.layerID + 0.1f * i);
+				layout.multiplier.x * layout.drawPile.x,
+				layout.multiplier.y * layout.drawPile.y,
+				-layout.drawPile.layerID + 0.1f);
 				cd.faceUp = false; // Make them all face-down
-				cd.state = ecardState.drawpile;
+				//cd.state = ecardState.drawpile; - commented out line
 				// Set depth sorting
 				cd.SetSortingLayerName(layout.drawPile.layerName);
 				cd.SetSortOrder(-10 * i);
@@ -223,6 +257,35 @@ namespace dsps {
 			switch (cd.state)
 			{
 				case ecardState.target:
+					if(cd.rank == 13)
+					{
+						MoveToDiscard(target);
+						MoveToTarget(Draw());
+						UpdateDrawPile();
+					}
+					if(firstCardThatIsClicked == true)
+					{
+						if(cd == firstCardThatIsClicked)
+						{
+							firstCardThatIsClicked = null;
+							return;
+						}
+						secondCardThatIsClicked = cd;
+						if(AreCardsEqualToThirteen(firstCardThatIsClicked, secondCardThatIsClicked) == true)
+						{
+							MoveToDiscard(firstCardThatIsClicked);
+							firstCardThatIsClicked = null;
+							MoveToDiscard(secondCardThatIsClicked);
+							secondCardThatIsClicked = null;
+							MoveToTarget(Draw());
+							UpdateDrawPile();
+						}
+						else
+						{
+							firstCardThatIsClicked = null;
+							secondCardThatIsClicked = null;
+						}
+					}
 					// Clicking the target card does nothing
 					break;
 				case ecardState.drawpile:
@@ -237,12 +300,69 @@ namespace dsps {
 				case ecardState.tableau:
 					// Clicking a card in the tableau will check if it's a valid play
 					bool validMatch = true;
-					if (!cd.faceUp)
+					/*if (!cd.faceUp)
 					{
 						// If the card is face-down, it's not valid
 						validMatch = false;
+					}*/
+					foreach (CardPyramid cover in cd.hiddenBy)
+                	{
+                    	if (cover.state == ecardState.tableau)
+                    	{
+                        	validMatch = false;
+                    	}
+                	}
+
+                	if (validMatch == false)  
+                	{
+                    	return;
+                	}
+
+					if(cd.rank == 13)
+					{
+						MoveToDiscard(cd);
+						if (target == null)
+						{
+							MoveToDiscard(Draw());
+						}
 					}
-					if (!AreCardsEqualToThirteen(cd, target))
+
+					if(firstCardThatIsClicked == true)
+					{
+						if(cd == firstCardThatIsClicked)
+						{
+							firstCardThatIsClicked = null;
+							return;
+						}
+						secondCardThatIsClicked = cd;
+						if(AreCardsEqualToThirteen(firstCardThatIsClicked,secondCardThatIsClicked) == true)
+						{
+							MoveToDiscard(firstCardThatIsClicked);
+							if(tableau.Contains(firstCardThatIsClicked) == true)
+							{
+								tableau.Remove(firstCardThatIsClicked);
+							}
+								firstCardThatIsClicked = null;
+								//validMatch = true;
+							MoveToDiscard(secondCardThatIsClicked);
+							if(tableau.Contains(secondCardThatIsClicked) == true)
+							{
+								tableau.Remove(secondCardThatIsClicked);
+							}
+								secondCardThatIsClicked = null;
+							if(target == null)
+							{
+								MoveToTarget(Draw());
+							}
+					} else{
+						firstCardThatIsClicked = null;
+						secondCardThatIsClicked = null;
+					}
+					} else{
+						firstCardThatIsClicked = cd;
+					}
+					break;
+					/*if (!AreCardsEqualToThirteen(cd, target))
 					{
 						// If it's not an adjacent rank, it's not valid
 						validMatch = false;
@@ -254,7 +374,7 @@ namespace dsps {
 					SetTableauFaces(); // Update tableau card face-ups
 									   //ScoreManager.EVENT(eScoreEvent.mine);
 									   // Clicking a card in the tableau will check if it's a valid play
-					break;
+					break; */
 			}
 			// Check to see whether the game is over or not
 			//CheckForGameOver();
@@ -263,7 +383,7 @@ namespace dsps {
 			// Test whether the game is over
 			//void CheckForGameOver() {
 			// If the tableau is empty, the game is over
-			if (tableau.Count == 0)
+			if (tableau.Count == 0) 
 			{
 				// Call GameOver() with a win
 				//GameOver(true);
