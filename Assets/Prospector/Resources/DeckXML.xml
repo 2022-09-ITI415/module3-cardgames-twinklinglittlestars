@@ -1,4 +1,4 @@
-<xml>
+﻿<xml>
 	<!-- decorators appear on every card. They are the suit and rank in the corners. -->
 	<decorator type="letter" x="-1.05" y="1.42" z="0" flip="0" scale="1.25"/>
 	<decorator type="suit" x="-1.05" y="1.03" z="0" flip="0" scale="0.4"/>
@@ -81,7 +81,7 @@
 		<pip x=".58" y="-1.1" z="0" flip="1"/>
 	</card>
 	<!-- Face cards have no pips, so this references the name of the Sprite to be shown. -->
-	<card rank="11" face="FaceCard_11"/>
-	<card rank="12" face="FaceCard_12"/>
-	<card rank="13" face="FaceCard_13"/>
+	<card rank="11" face="Facecard_11"/>
+	<card rank="12" face="Facecard_12"/>
+	<card rank="13" face="Facecard_13"/>
 </xml>

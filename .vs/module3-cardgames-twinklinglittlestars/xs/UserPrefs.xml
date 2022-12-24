@@ -1,0 +1,41 @@
+﻿<Properties StartupConfiguration="{993E91C6-B474-C6AA-211D-FB934CE383E9}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Prospector/__Scripts/Card.cs">
+    <Files>
+      <File FileName="Assets/OtherGame/PScripts/CardPyramid.cs" Line="17" Column="1" />
+      <File FileName="Assets/OtherGame/PScripts/Deck.cs" Line="122" Column="1" />
+      <File FileName="Assets/OtherGame/PScripts/Layout.cs" Line="32" Column="21" />
+      <File FileName="Assets/OtherGame/Resources/LayoutXMLPyramidSolitaire.xml" Line="61" Column="48" />
+      <File FileName="Assets/OtherGame/Resources/DeckXML2.xml" />
+      <File FileName="Assets/Prospector/__Scripts/Prospector.cs" Line="51" Column="1" />
+      <File FileName="Assets/Prospector/__Scripts/Deck.cs" Line="100" Column="49" />
+      <File FileName="Assets/Prospector/__Scripts/Card.cs" Line="5" Column="18" />
+      <File FileName="Assets/OtherGame/PScripts/PyramidSolitaire.cs" Line="227" Column="13" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="module3-cardgames-twinklinglittlestars" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="OtherGame" expanded="True">
+                <Node name="PScripts" expanded="True" />
+                <Node name="Resources" expanded="True" />
+              </Node>
+              <Node name="Prospector" expanded="True">
+                <Node name="__Scripts" expanded="True">
+                  <Node name="Card.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0ccdb39c-397d-4dc7-aab5-748927a56800" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
